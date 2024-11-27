@@ -1,0 +1,361 @@
+/* General Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Added for better sizing control */
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  background-color: #F6F2EB;
+}
+
+/* Box Styles */
+.box1 {
+  height: 150px;
+  width: 400px;
+  background-color: gainsboro;
+  border-radius: 10px;
+}
+
+h2 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+.box2 {
+  background-image: url('https://www.gstatic.com/classroom/themes/img_breakfast.jpg');
+  background-size: cover; /* Ensures the image covers the entire box */
+  background-position: center; /* Centers the image within the box */
+  height: 100px;
+  padding: 10px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+/* Navigation and Dash */
+.dash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 60px;
+  background-color: #e6c49b;
+}
+
+.Heading {
+  text-align: center;
+}
+
+#logn-btn {
+  position: absolute;
+  left: 20px;
+}
+
+.line {
+  margin-left: 30px;  
+  margin-top: 10px;
+  width: 40%;
+  }
+
+/* Classmate Section */
+.students {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+h6 {
+  margin: 10px;
+}
+
+.nav-classmates {
+  position: fixed;
+  width: 100%;
+  background-color: #f6ba70;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-heading {
+  color: black;
+  font-size: 28px;
+}
+
+p {
+  color: black;
+  font-size: 12px;
+}
+
+.total-students {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+#class-teacher {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-size: 18px;
+}
+
+.style1{
+  color: whites;
+}
+
+
+.search-container {
+  position: sticky; /* Fixes it in place */
+  top: 200px; /* Adjusts distance from the top of the viewport */
+  left: 40px; /* Adjusts distance from the left of the viewport */
+  right: 20%; /* Keeps the margin consistent with the rest of the layout */
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Corrected to align items properly */
+  width: 80%;
+  padding: 10px; /* Optional: Add padding for better appearance */
+  gap: 50px;
+}
+
+
+.search-box {
+  justify-content: center;
+  margin-top: 15px;
+  width: 80%;
+}
+
+/* Media Queries */
+@media (min-width: 500px) {
+  p {
+    font-size: 18px;
+  }
+  .search-box {
+    width: 30%;
+  }
+  .linee {
+    width: 10%;
+  }
+}
+
+.student-card{
+  margin-top: 110px;
+}
+
+.student-card p {
+  font-size: 17px;
+}
+
+
+
+.card-2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Message Screen Styles */
+#msg-screen {
+  background-color: #F6F2EB;
+  height: 80vh;
+  width: 700px;
+  border-radius: 20px;
+  padding: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column; 
+
+  overflow: hidden; 
+}
+
+.messages-container {
+  flex-grow: 1;
+  overflow-y: auto; 
+  max-height: calc(100% - 100px);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: rgb(217, 217, 217);
+}
+
+.flex {
+  display: flex;
+}
+
+.send-box {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 5px;
+  width: 100%;
+  padding: 10px;
+}
+
+.nav-width {
+  display: flex;
+  gap: 20px;
+}
+
+#nav-msg-screen {
+  display: flex;
+  width: 86%;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: #1876D2;
+  border-radius: 10px;
+}
+
+#nav-msg-screen p {
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.btn-position {
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+}
+
+.box {
+  position: relative;
+  margin-top: 50px;
+  display: flex;
+  justify-content: end;
+}
+
+.chats-box {
+  display: flex;
+  flex-direction: column; 
+}
+
+.chats-box p {
+  background-color: rgba(94, 94, 186, 0.728);
+  padding: 10px;
+  border: 1px solid black;
+  margin: 5px;
+  border-radius: 5px 5px 0px 5px;
+}
+
+.no-scroll {
+  overflow: hidden; /* Disable scrolling */
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1170px) {
+  #msg-screen {
+    justify-content: center;
+    width: 90%;
+    height: 70vh; 
+    border-radius: 10px;
+    z-index: 1000;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+  }
+
+  .card-2 {
+    display: flex;
+    flex-direction: column; 
+    align-items: start; 
+    width: 70%;
+  }
+  .box1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .card-2 {
+    width: 100%; 
+  }
+  .box1 {
+    width: 100%; 
+  }
+  #Mgs-button {
+    position: fixed; 
+    bottom: 20px;  
+    right: 20px;    
+    z-index: 1000;
+  }
+}
+
+.student-info{
+  align-items: center;
+  display: flex;
+  gap: 30px;
+  margin: 30px;
+  
+}
+
+.avatar{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
+  background-size: cover;
+}
+
+.student-info p{
+  font-weight: bold;
+  font-size: larger;
+  color: rgb(62, 60, 60);
+}
+
+
+
+.header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+
+.messages-list ul{
+  display: flex;
+  flex-direction: column;
+}
+
+ .style-box {
+  display: inline-flex;
+  flex-direction: column;
+  background-color: #73a3d3;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px 10px 0px 10px;
+  color: white;
+  list-style: none;
+  align-self: flex-start; /* Aligns each message to the start (left) of the container */
+  word-wrap: break-word; /* Ensures long text breaks into multiple lines */
+}
+
+
+.classmates-table{
+  padding: 70px;
+}
+td{
+  padding: 20px;
+}
+.input{
+  width: 100%;
+}

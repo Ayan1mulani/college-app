@@ -1,0 +1,361 @@
+*{
+    margin: 0;
+    padding: 0;
+    a {
+        text-decoration: none; 
+        color: #000; 
+    }
+
+}
+#login-l{
+    font-family:'Lucida Sans', 'Lucida Sans Regular';
+    font-weight: bold;
+}
+
+
+.p-text{
+    padding: 10px;
+    display: flex;
+    font-size: 20px;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    bottom: 40px;
+
+}
+
+body{
+    background-color: whitesmoke;
+ }
+
+.parent{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-70px); 
+    
+ }
+.L-page{
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  
+   
+}
+
+#new{
+  padding: 1px;
+  position: relative;
+  left: 13px;
+  top: 13px;
+  display: inline-block;
+  background-color: white;
+}
+
+.input{
+    padding: 15px;
+    margin: 5px;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    
+}
+.input1{
+  padding: 7px;
+}
+#login-btn{
+  border: none;
+  padding: 10px;
+  width: 95%;
+  cursor: pointer;
+  background-color: #f8c281;
+  
+}
+  
+#login-btn1{
+  border: none;
+  padding: 10px;
+  width: 95%;
+  cursor: pointer;
+  background-color: rgb(33, 168, 213);
+}
+
+#login-btn1{
+  background-color: rgb(30, 161, 204);
+
+}
+
+#login-btn1{
+  background-color: rgb(4, 122, 162);
+
+}
+
+
+
+
+
+@media (max-width: 500px) {
+    .Header p {
+        display: none; 
+    }
+    .Header button{
+       padding: 0px;
+       
+    }
+}
+
+.nav-links{
+    display: flex;
+    gap: 20px;
+}
+
+.Header{
+    background-color: #f6ba70;
+    height: 70px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+}
+.Header p {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+
+.Header button {
+    color: white;
+    background-color: #555;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.logout-btn{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+   
+}
+
+  
+  select.teacher-dropdown {
+    width: 80%;
+    padding: 4px;
+    margin: auto;
+    display: block;
+    background-color: white;
+    color: black;
+  }
+  
+  select.teacher-dropdown .placeholder {
+    color: #ccc; /* Light gray to indicate placeholder */
+  }
+  
+  select.teacher-dropdown:focus,
+  select.teacher-dropdown:valid {
+    background-color: white; /* Keeps dropdown white when focused or selected */
+    color: black;
+  }
+
+  
+  .subject-select {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  .submit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+
+  .error-message {
+    color: #d9534f; /* Red color for error */
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto; /* Allow horizontal scrolling only if needed */
+    padding: 0 10px; /* Add padding to avoid touching screen edges on mobile */
+  }
+  
+  /* Base Styles for Table */
+  .timetable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .timetable th,
+  .timetable td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  
+  .timetable th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .timetable td {
+    background-color: #ffffff;
+  }
+  
+  /* Hover effect */
+  .timetable tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .timetable {
+    padding: 20px;
+      width: 100%;
+    }
+  
+    /* Hide table headers */
+    .timetable thead {
+      display: none;
+    }
+  
+    /* Display each row as a block */
+    .timetable,
+    .timetable tbody,
+    .timetable tr,
+    .timetable td {
+      display: block;
+      width: 100%;
+    }
+  
+    .timetable tr {
+      margin-bottom: 15px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+  
+    /* Style cells with a "label" effect */
+    .timetable td {
+      position: relative;
+      padding-left: 50%;
+      text-align: left;
+      font-size: 1em;
+      border: none;
+    }
+  
+    .timetable td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 15px;
+      font-weight: bold;
+      color: #333;
+      text-transform: uppercase;
+    }
+  
+    /* Compact font size for smaller screens */
+    .timetable td select,
+    .timetable td {
+      font-size: 0.85em;
+    }
+  }
+  
+  .Pcontainer{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  
+  }
+
+  /* Card style for table rows on very small screens */
+  @media (max-width: 480px) {
+    .timetable td {
+      padding: 10px;
+      padding-left: 40%;
+    }
+    .timetable td::before {
+      font-size: 0.85em;
+    }
+    .Pcontainer{
+      flex-direction: column;
+      padding: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+    
+  }
+
+  #btn{
+    background-color: green;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor:pointer;
+
+
+  }
+
+  .box-5{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  .main1{
+    height: 70vh;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .container2{
+    background-color: red;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+  
+  }
+ 
+
+
+  #box2{
+    background-color: #3b7ddd;;
+  }
+  #box3{
+    background-color: #fcb92c;
+  }
