@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const BASE_URL = process.env.REACT_APP_BASE_URL
+const BASE_URL = "https://collegeapp-backend.onrender.com"
 
 const fetchGetData = (uri) => {
   const url = `${BASE_URL}${uri}`;
@@ -16,7 +16,7 @@ const fetchGetData = (uri) => {
 
 
 const fetchPostData = (uri, payload) => {
-  const url = `${BASE_URL}${uri}`;
+  const url = `${"https://collegeapp-backend.onrender.com"}${uri}`;
   return axios.post(url, payload)
     .catch(error => {
       // Handle exceptions/errors

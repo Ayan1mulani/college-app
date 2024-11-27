@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import LogCard from './LogCard';
-const BASE_URL = process.env.REACT_APP_BASE_URL
+const BASE_URL = "https://collegeapp-backend.onrender.com"
+
 
 
 const Login1 = () => {
@@ -11,7 +12,7 @@ const Login1 = () => {
         const response = await fetch(
         {BASE_URL});
         if (response.ok) {
-        alert('Backend is up and running.');
+          console.log("backEnd is running good")
         } 
       } catch (error) {
         console.error('Could not reach backend:', error);
