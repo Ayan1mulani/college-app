@@ -332,6 +332,19 @@ body{
 
 
   }
+  .error-message {
+    color: red; /* Red color for error */
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center; /* Center the error message */
+  }
+  .loading-spinner{
+    color: green;
+    position: relative;
+    left: 150px;
+    justify-content: center;
+  }
+
 
   .box-5{
     display: flex;

@@ -5,9 +5,12 @@ import { fetchPostData } from '../Client/Clinet';
 
 const LoginPage = () => {
   const [studentdata, setStudentdata] = useState({
-    loginID: '',
-    password: '',
+    loginID: '12511413',
+    password: '2165',
   });
+
+  const [loading, setLoading] = useState(false); // Track loading state
+  const [error, setError] = useState(null); // Track error message
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -29,6 +32,9 @@ const LoginPage = () => {
       return;
     }
 
+    setLoading(true); // Set loading to true before making the request
+    setError(null); // Reset error state before each login attempt
+
     fetchPostData(`/add/token/${role}`, studentdata) // Use role in URL
       .then((response) => {
         console.log(`${role} logged in:`, response.data);
@@ -37,11 +43,15 @@ const LoginPage = () => {
           localStorage.setItem('token', response.data.token);
           navigate(`/${role}`); // Redirect to role-specific dashboard
         } else {
-          alert('Login failed. Invalid credentials.');
+          setError('Login failed. Invalid credentials.'); // Set error message
         }
       })
       .catch((error) => {
         console.error('Error logging in:', error);
+        setError('Crediential failed. Please try again.'); // Set error message for other errors
+      })
+      .finally(() => {
+        setLoading(false); // Reset loading to false after request is completed
       });
   };
 
@@ -81,9 +91,17 @@ const LoginPage = () => {
           />
         </div>
 
-        <button className="input" id="login-btn1" onClick={handleSubmit}>
-          Login
-        </button>
+        {/* Show the loading spinner if loading state is true */}
+        {loading ? (
+          <div className="loading-spinner">Loading...</div>
+        ) : (
+          <button className="input" id="login-btn1" onClick={handleSubmit}>
+           Login
+          </button>
+        )}
+
+        {/* Show the error message in red if there's an error */}
+        {error && <div className="error-message">{error}</div>}
       </div>
     </div>
   );
