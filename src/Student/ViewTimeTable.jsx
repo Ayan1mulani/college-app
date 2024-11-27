@@ -61,7 +61,7 @@ const ViewTimeTable = () => {
           <tbody>
             {timetableData.map((dayData) => (
               <tr key={dayData.dayOfWeek}>
-                <td>{dayData.dayOfWeek}</td>
+                <td className='day1'>{dayData.dayOfWeek}</td>
                 <td>{dayData.slot1 || '-'}</td>
                 <td>{dayData.slot2 || '-'}</td>
                 <td>{dayData.slot3 || '-'}</td>

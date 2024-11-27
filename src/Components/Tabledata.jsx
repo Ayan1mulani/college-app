@@ -7,7 +7,7 @@ const Tabledata = ({ day, selectedSlots, onSelectionChange }) => {
   return (
     
     <tr>
-      <td data-label="Day">{day}</td>
+      <td data-label="Day" >{day}</td>
       {selectedSlots.map((subject, index) => (
         <td key={index} data-label={`Slot ${index + 1}`}>
           <select

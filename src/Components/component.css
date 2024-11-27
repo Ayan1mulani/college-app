@@ -170,7 +170,10 @@ body{
     background-color: white; /* Keeps dropdown white when focused or selected */
     color: black;
   }
-
+.day1{
+  color: black;
+  font-weight: bolder;
+}
   
   .subject-select {
     width: 100%;
