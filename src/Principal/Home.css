@@ -30,7 +30,8 @@
 
 .h-2{
     font-size: clamp(10px, 1vw + 1rem, 23px);
-    color: #eba753;
+    color: black;
+    font-weight: bold;
 }
 
 .grid-container {
@@ -66,7 +67,6 @@
         margin-top: 0px;
     }
 }
-
 
 
 .add-card{

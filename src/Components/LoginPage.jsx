@@ -65,7 +65,7 @@ const LoginPage = () => {
   return (
     <div className="parent">
       <div className="L-page">
-        <p className="p-text">Hey, Enter your details for {role.charAt(0).toUpperCase() + role.slice(1)} Login</p>
+        <h6 className="p-text">Hey, Enter  your  details  for {role.charAt(0).toUpperCase() + role.slice(1)} Login</h6>
 
         <div className="input1">
           <p id="new">College ID</p>
@@ -93,14 +93,15 @@ const LoginPage = () => {
 
         {/* Show the loading spinner if loading state is true */}
         {loading ? (
-          <div className="loading-spinner">Loading...</div>
+          <button className="input loading-spinner" id="login-btn1"  onClick={handleSubmit}>
+          Loading....
+         </button>
         ) : (
           <button className="input" id="login-btn1" onClick={handleSubmit}>
            Login
           </button>
         )}
 
-        {/* Show the error message in red if there's an error */}
         {error && <div className="error-message">{error}</div>}
       </div>
     </div>

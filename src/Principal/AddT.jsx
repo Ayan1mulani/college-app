@@ -12,6 +12,7 @@ const AddT = () => {
     teacherContact: '',
     subject: '',
   });
+  const [loading, setLoading] = useState(false); // State to track loading status
 
   const subjects = useFetchSubjects();
 
@@ -39,6 +40,8 @@ const AddT = () => {
       return;
     }
 
+    setLoading(true); // Start loading
+
     fetchPostData(`/add/teacher/${teacher.college}`, teacher)
       .then((response) => {
         alert('Teacher details added successfully!');
@@ -54,10 +57,12 @@ const AddT = () => {
           teacherContact: '',
           subject: '',
         });
+        setLoading(false); // Stop loading
       })
       .catch((error) => {
         console.error('Error adding teacher:', error);
         alert('Failed to add teacher. Please try again.');
+        setLoading(false); // Stop loading on error
       });
   };
 
@@ -133,9 +138,11 @@ const AddT = () => {
         </select>
 
         <button className='btn' id='login-btn' onClick={handleSubmit}>
-          ADD
+          {loading ? 'Adding...' : 'ADD'} {/* Show "Adding..." text during loading */}
         </button>
       </div>
+
+   
     </div>
   );
 };

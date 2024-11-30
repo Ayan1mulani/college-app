@@ -10,9 +10,7 @@ a {
   color: #000;
 }
 
-body {
-  background-color: #F6F2EB;
-}
+
 
 /* Box Styles */
 .box1 {
@@ -103,23 +101,16 @@ p {
   font-size: 18px;
 }
 
-.style1{
-  color: whites;
 
-}
-#styleid1{
-  background-color: rgb(217, 217, 217);
 
-}
 
 
 .search-container {
   position: relative;
   top: 50px;
+ justify-content: space-between;
   display: flex;
-  background-color: white;
   background-color: rgb(217, 217, 217);
-  justify-content: space-between;
   left: 10px;
   align-items: center; /* Corrected to align items properly */
   width: 90%;
@@ -337,7 +328,17 @@ p {
   
   flex-direction: column;
 }
+.loading-container{
+  position: absolute;
+  top: 50%;
+  left: 45%;
+}
 
+#styleid1{
+  position: relative;
+  top: 10px;
+  font-size: 18px;
+}
  .style-box {
   display: inline-flex;
   flex-direction: column;
@@ -359,7 +360,6 @@ p {
 
 .classmates-table{
   padding: 70px;
-  background-color: #ADD8E6;
 }
   
 /* General table styling for td and tr */
@@ -367,19 +367,18 @@ table {
   border-collapse: collapse; /* Ensure borders collapse for cleaner look */
   width: 100%;
   margin-top: 20px;
-  background-color:#ADD8E6;
   background-color: rgb(217, 217, 217);
 
 }
 
 th, td {
   text-align: left; /* Align text to the left */
+
   padding: 15px; /* Add padding for better readability */
   border: 1px solid #ddd; /* Add light borders for clear separation */
 }
 
 th {
-  background-color: #f4f4f4; /* Add a light background for table headers */
   font-weight: bold;
 }
 
@@ -389,10 +388,5 @@ td {
   white-space: nowrap; /* Prevent text wrapping */
 }
 
-tr:nth-child(even) {
-  background-color: #f9f9f9; /* Add subtle zebra striping for rows */
-}
 
-tr:hover {
-  background-color: #f1f1f1; /* Highlight row on hover for better UX */
-}
+

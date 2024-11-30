@@ -10,6 +10,7 @@ const AddS = () => {
     password: '',
     batch: '',
   });
+  const [loading, setLoading] = useState(false); // State to track loading status
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -28,6 +29,8 @@ const AddS = () => {
       return;
     }
 
+    setLoading(true); // Start loading
+
     fetchPostData(`/add/student/${student.batch}`, student)
       .then((response) => {
         alert('Student details added successfully!');
@@ -40,10 +43,12 @@ const AddS = () => {
           password: '',
           batch: '',
         });
+        setLoading(false); // Stop loading
       })
       .catch((error) => {
         console.error('Error adding student:', error);
         alert('Failed to add student. Please try again.');
+        setLoading(false); // Stop loading on error
       });
   };
 
@@ -94,7 +99,7 @@ const AddS = () => {
         </select>
 
         <button className='btn' id='login-btn' onClick={handleSubmit}>
-          ADD
+          {loading ? 'Adding...' : 'ADD'} {/* Show "Adding..." text during loading */}
         </button>
       </div>
     </div>

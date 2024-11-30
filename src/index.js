@@ -16,6 +16,7 @@ import AddSubject from './Principal/AddSubject';
 import Teacher from './Teacher/Teacher'
 import App from './App';
 import Login1 from './Components/Login1';
+import Test from './Components/Test';
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +30,7 @@ const appRouter = createBrowserRouter([
       { path: "add/student", element: <AddS /> },
       { path: "view/teachers", element: <Branch /> },
       { path: "view/classmates", element: <Classmates /> },
+      {path:"test", element:<Test/>},
       { path: "messages", element: <MessageScreen /> },
       { path: "table", element: <TimeTable /> },
       { path: "view/timetable", element: <ViewTimeTable /> },

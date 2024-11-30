@@ -28,8 +28,8 @@ const Navbar = () => {
         }
       }
     }}
-  >
-    <img src="../logout.png" alt="logout" height={20} />
+  >Logout 
+    <img src="../logout.png" alt="logout" height={25} width={30} /> 
   </button>
 </Link>
        </div>

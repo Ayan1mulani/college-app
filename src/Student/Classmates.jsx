@@ -6,16 +6,19 @@ import StudentsCard from './StudentsCard';
 import fetchGetData from '../Client/Clinet';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Classmates = () => {
   const [studentData, setStudentData] = useState([]);
   const [filterStudents, setFilterStudents] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [branch, setBranch] = useState('SOC');
+  const [loading, setLoading] = useState(false);  // State to manage loading status
 
   // Fetch students based on selected branch
   useEffect(() => {
     const getClassMates = async () => {
+      setLoading(true); // Start loading
       console.log("Fetching students for branch:", branch);
       try {
         const response = await fetchGetData(`/view/students/${branch}`);
@@ -24,6 +27,8 @@ const Classmates = () => {
         setFilterStudents(response.data);
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoading(false); // Stop loading
       }
     };
     getClassMates();
@@ -55,11 +60,10 @@ const Classmates = () => {
             exclusive
             onChange={handleBranchChange}
             aria-label="Platform"
-            
             className="branch-toggle-group"
           >
-            <ToggleButton value="SOE" className="toggle-btn">SOE</ToggleButton>
-            <ToggleButton value="SOC" className="toggle-btn">SOC</ToggleButton>
+            <ToggleButton value="SOE" className="toggle-btn">SOC</ToggleButton>
+            <ToggleButton value="SOC" className="toggle-btn">SOE</ToggleButton>
             <ToggleButton value="IOD" className="toggle-btn">IOD</ToggleButton>
           </ToggleButtonGroup>
         </div>
@@ -75,16 +79,23 @@ const Classmates = () => {
           <p className="style1" id="styleid1">{studentData.length} Students</p>
         </div>
 
-        {/* Student Data Display */}
-        <div className="messages-container">
-          {studentData.length > 0 ? (
-            <StudentsCard Data={studentData} />
-          ) : (
-            <p style={{ justifySelf: 'center', marginTop: '100px' }}>
-              No students available
-            </p>
-          )}
-        </div>
+        {/* Display loading spinner if data is still loading */}
+        {loading ? (
+          <div className="loading-container">
+            <CircularProgress />
+          </div>
+        ) : (
+          // Student Data Display
+          <div className="messages-container">
+            {studentData.length > 0 ? (
+              <StudentsCard Data={studentData} />
+            ) : (
+              <p style={{ justifySelf: 'center', marginTop: '100px' }}>
+                No students available
+              </p>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

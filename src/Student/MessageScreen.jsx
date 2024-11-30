@@ -6,12 +6,14 @@ import Fab from '@mui/material/Fab';
 import SockJS from 'sockjs-client';
 import { Stomp } from '@stomp/stompjs';
 import fetchGetData from '../Client/Clinet';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
 
 const MessageScreen = ({ onClose, senderType = 'Teacher' }) => {
   const [stompClient, setStompClient] = useState(null);
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const messagesEndRef = useRef(null);
+  const navigate = useNavigate();  // Initialize navigate
 
   // Format time for display
   const displayTime = (isoTimestamp) => {
@@ -76,7 +78,18 @@ const MessageScreen = ({ onClose, senderType = 'Teacher' }) => {
     return () => {
       document.body.style.overflow = 'auto';
     };
+
   }, []);
+
+  // Use navigate function to navigate programmatically
+  const handleClose = () => {
+    if (senderType === 'Teacher') {
+      navigate("/teacher");  // Navigate to /teacher route
+    }
+    if (onClose) {
+      onClose();  // Execute the original onClose function passed as prop
+    }
+  };
 
   useEffect(() => {
     // Auto-scroll to the bottom when new messages arrive
@@ -92,7 +105,7 @@ const MessageScreen = ({ onClose, senderType = 'Teacher' }) => {
           <p>Message Screen</p>
         </div>
         <div>
-          <Fab size="small" color="black" className="close" onClick={onClose}>
+          <Fab size="small" color="black" className="close" onClick={handleClose}>
             <CloseIcon />
           </Fab>
         </div>

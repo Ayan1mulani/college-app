@@ -33,7 +33,7 @@ const Login1 = () => {
         <div className='cards1'>
          <div>
           <h2 className='h-3'>Welcome to School Management System</h2>   
-          <p>Streamline school management, class organization, and add students and faculty. <br />
+          <p className='desc-l'>Streamline school management, class organization, and add students and faculty. <br />
             Seamlessly track attendance, assess performance, and provide feedback. Access records, view marks, and communicate effortlessly.</p>
           </div>
           <div className='card-div'>
