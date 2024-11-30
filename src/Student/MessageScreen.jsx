@@ -32,7 +32,7 @@ const MessageScreen = ({ onClose, senderType = 'Teacher' }) => {
 
     fetchMessages();
 
-    const socket = new SockJS(`${process.env.REACT_APP_API_URL}/ws`);
+    const socket = new SockJS('https://collegeapp-backend.onrender.com/ws');
     const client = Stomp.over(socket);
 
     // Connect the WebSocket client
@@ -86,7 +86,7 @@ const MessageScreen = ({ onClose, senderType = 'Teacher' }) => {
   }, [messages]);
 
   return (
-    <div id="msg-screen" className="msg-screen">
+    <div id="msg-screen" >
       <div className="nav-width">
         <div id="nav-msg-screen">
           <p>Message Screen</p>

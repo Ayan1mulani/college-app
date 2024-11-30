@@ -17,9 +17,9 @@ const Navbar = () => {
        <Link to={`/view/classmates`}>  <p>ClassRooms</p></Link>
       
        </div>
-       <div >
+       <div  className='log'>
        <Link to={'/'}>
-  <button
+  <button 
     className='logout-btn'
     onClick={(e) => {
       if (!window.confirm("Are you sure you want to logout?")) {
@@ -30,7 +30,7 @@ const Navbar = () => {
       }
     }}
   >
-    <LogoutIcon />
+    <img src="../logout.png" alt="logout" height={20} />
   </button>
 </Link>
        </div>

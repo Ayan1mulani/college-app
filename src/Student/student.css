@@ -58,11 +58,7 @@ p {
   left: 20px;
 }
 
-.line {
-  margin-left: 30px;  
-  margin-top: 10px;
-  width: 40%;
-  }
+
 
 /* Classmate Section */
 .students {
@@ -109,18 +105,25 @@ p {
 
 .style1{
   color: whites;
+
+}
+#styleid1{
+  background-color: rgb(217, 217, 217);
+
 }
 
 
 .search-container {
-  position: sticky; /* Fixes it in place */
-  top: 200px; /* Adjusts distance from the top of the viewport */
-  left: 40px; /* Adjusts distance from the left of the viewport */
-  right: 20%; /* Keeps the margin consistent with the rest of the layout */
+  position: relative;
+  top: 50px;
   display: flex;
+  background-color: white;
+  background-color: rgb(217, 217, 217);
   justify-content: space-between;
+  left: 10px;
   align-items: center; /* Corrected to align items properly */
-  width: 80%;
+  width: 90%;
+  border-radius: 10px;
   padding: 10px; /* Optional: Add padding for better appearance */
   gap: 50px;
 }
@@ -130,6 +133,7 @@ p {
   justify-content: center;
   margin-top: 15px;
   width: 80%;
+  color: black;
 }
 
 /* Media Queries */
@@ -140,9 +144,7 @@ p {
   .search-box {
     width: 30%;
   }
-  .linee {
-    width: 10%;
-  }
+  
 }
 
 .student-card{
@@ -163,7 +165,7 @@ p {
 
 /* Message Screen Styles */
 #msg-screen {
-  background-color: #F6F2EB;
+  background-color: rgb(217, 217, 217);
   height: 80vh;
   width: 700px;
   border-radius: 20px;
@@ -171,9 +173,9 @@ p {
   z-index: 1000;
   display: flex;
   flex-direction: column; 
-
   overflow: hidden; 
 }
+
 
 .messages-container {
   flex-grow: 1;
@@ -181,7 +183,7 @@ p {
   max-height: calc(100% - 100px);
   border-radius: 10px;
   padding: 10px;
-  margin-top: 20px;
+  margin-top: -50px;
   background-color: rgb(217, 217, 217);
 }
 
@@ -196,6 +198,11 @@ p {
   gap: 5px;
   width: 100%;
   padding: 10px;
+}
+.message-item{
+  background-color: rgb(217, 217, 217);
+
+
 }
 
 .nav-width {
@@ -306,13 +313,7 @@ p {
   
 }
 
-.avatar{
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  margin-top: 10px;
-  background-size: cover;
-}
+
 
 .student-info p{
   font-weight: bold;
@@ -333,6 +334,7 @@ p {
 
 .messages-list ul{
   display: flex;
+  
   flex-direction: column;
 }
 
@@ -343,19 +345,54 @@ p {
   margin: 10px;
   padding: 10px;
   border-radius: 10px 10px 0px 10px;
-  color: white;
   list-style: none;
   align-self: flex-start; /* Aligns each message to the start (left) of the container */
   word-wrap: break-word; /* Ensures long text breaks into multiple lines */
+}
+.style-box p{
+  background-color: #73a3d3;;
+}
+.style-box p strong{
+  background-color: #73a3d3;;
 }
 
 
 .classmates-table{
   padding: 70px;
+  background-color: #ADD8E6;
 }
-td{
-  padding: 20px;
-}
-.input{
+  
+/* General table styling for td and tr */
+table {
+  border-collapse: collapse; /* Ensure borders collapse for cleaner look */
   width: 100%;
+  margin-top: 20px;
+  background-color:#ADD8E6;
+  background-color: rgb(217, 217, 217);
+
+}
+
+th, td {
+  text-align: left; /* Align text to the left */
+  padding: 15px; /* Add padding for better readability */
+  border: 1px solid #ddd; /* Add light borders for clear separation */
+}
+
+th {
+  background-color: #f4f4f4; /* Add a light background for table headers */
+  font-weight: bold;
+}
+
+td {
+  font-size: 14px; /* Adjust font size for readability */
+  vertical-align: middle; /* Vertically center-align the content */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9; /* Add subtle zebra striping for rows */
+}
+
+tr:hover {
+  background-color: #f1f1f1; /* Highlight row on hover for better UX */
 }

@@ -20,7 +20,7 @@ const Login1 = () => {
     // Send a ping request every 5 minutes (300000 ms)
     const interval = setInterval(() => {
       pingBackend();
-    }, 120000); // 5 minutes
+    }, 120000); 
 
     // Cleanup the interval on component unmount
     return () => clearInterval(interval);
@@ -29,9 +29,19 @@ const Login1 = () => {
   return (
     <div className="main1">
       <div className="Pcontainer">
-        <LogCard id="box2" text="Admin Login" role="admin" navigateTo="/admin" />
-        <LogCard text="Teacher Login" role="teacher" navigateTo="/teacher" />
-        <LogCard id="box3" text="Student Login" role="student" navigateTo="/LoginPage" />
+        <img className='img' src="../1.png" alt="logout button"   />
+        <div className='cards1'>
+         <div>
+          <h2 className='h-3'>Welcome to School Management System</h2>   
+          <p>Streamline school management, class organization, and add students and faculty. <br />
+            Seamlessly track attendance, assess performance, and provide feedback. Access records, view marks, and communicate effortlessly.</p>
+          </div>
+          <div className='card-div'>
+        <LogCard id="box2"  text="Admin Login" role="admin" navigateTo="/admin" />
+        <LogCard id="box3" text="Teacher Login" role="teacher" navigateTo="/teacher" />
+        <LogCard id="box4" text="Student Login" role="student" navigateTo="/LoginPage" />
+        </div>
+        </div>
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ const Tabledata = ({ day, selectedSlots, onSelectionChange }) => {
           <select
             className="input"
             value={subject}
-            onChange={(e) => onSelectionChange(index, e.target.value)}
+            onChange={(e) => onSelectionChange(index, e.targealue)}
           >
             
             <option value="">Choose Subject</option>
