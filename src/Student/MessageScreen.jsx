@@ -86,7 +86,7 @@ const MessageScreen = ({ onClose, senderType = 'Teacher' }) => {
   }, [messages]);
 
   return (
-    <div id="msg-screen" >
+    <div id="msg-screen" className="msg-screen">
       <div className="nav-width">
         <div id="nav-msg-screen">
           <p>Message Screen</p>
